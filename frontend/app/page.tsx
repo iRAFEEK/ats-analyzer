@@ -224,7 +224,7 @@ export default function HomePage() {
             {/* Results */}
             {hasResults && (
                 <div className="space-y-6">
-                    <ScoreCard score={analysisState.analysisResult.score} />
+                    <ScoreCard score={analysisState.analysisResult!.score} />
 
                     <div className="flex items-center justify-end">
                         <div className="flex items-center space-x-3">
@@ -257,11 +257,11 @@ export default function HomePage() {
             {/* Detailed Results */}
             {hasResults && (
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <WarningsList ats={analysisState.analysisResult.ats} />
+                    <WarningsList ats={analysisState.analysisResult!.ats} />
                     <EvidencePanel
-                        evidence={analysisState.analysisResult.evidence}
-                        missing={analysisState.analysisResult.missing}
-                        weaklySupported={analysisState.analysisResult.weakly_supported}
+                        evidence={analysisState.analysisResult!.evidence}
+                        missing={analysisState.analysisResult!.missing}
+                        weaklySupported={analysisState.analysisResult!.weakly_supported}
                     />
                 </div>
             )}

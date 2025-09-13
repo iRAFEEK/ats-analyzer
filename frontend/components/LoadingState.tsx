@@ -59,7 +59,7 @@ function LoadingStep({ icon, title, description, isActive, isComplete }: Loading
 export default function LoadingState({ status, progress = 0, message, className }: LoadingStateProps) {
     const isParsing = status === 'parsing';
     const isAnalyzing = status === 'analyzing';
-    
+
     // Only show loading animation for parsing and analyzing states
     if (status !== 'parsing' && status !== 'analyzing') {
         return null;
