@@ -1,0 +1,673 @@
+{
+    "Programming Languages": {
+        "Python": [
+            "python",
+            "py",
+            "python3",
+            "python2"
+        ],
+        "JavaScript": [
+            "javascript",
+            "js",
+            "ecmascript",
+            "es6",
+            "es2015",
+            "node.js",
+            "nodejs"
+        ],
+        "TypeScript": [
+            "typescript",
+            "ts"
+        ],
+        "Java": [
+            "java",
+            "openjdk",
+            "oracle java"
+        ],
+        "C#": [
+            "c#",
+            "csharp",
+            "c sharp",
+            ".net",
+            "dotnet"
+        ],
+        "C++": [
+            "c++",
+            "cpp",
+            "cplusplus"
+        ],
+        "C": [
+            "c programming",
+            "ansi c",
+            "c language"
+        ],
+        "Go": [
+            "golang",
+            "go programming",
+            "go language"
+        ],
+        "Rust": [
+            "rust",
+            "rust-lang"
+        ],
+        "PHP": [
+            "php",
+            "php7",
+            "php8"
+        ],
+        "Ruby": [
+            "ruby",
+            "ruby on rails",
+            "rails"
+        ],
+        "Swift": [
+            "swift",
+            "swift ui",
+            "swiftui"
+        ],
+        "Kotlin": [
+            "kotlin",
+            "kotlin/jvm"
+        ],
+        "Scala": [
+            "scala"
+        ],
+        "R": [
+            "r programming",
+            "r language",
+            "r-lang",
+            "r statistical"
+        ],
+        "MATLAB": [
+            "matlab"
+        ],
+        "Perl": [
+            "perl"
+        ],
+        "Shell": [
+            "bash",
+            "shell",
+            "zsh",
+            "fish",
+            "powershell"
+        ]
+    },
+    "Web Technologies": {
+        "HTML": [
+            "html",
+            "html5",
+            "html4"
+        ],
+        "CSS": [
+            "css",
+            "css3",
+            "cascading style sheets"
+        ],
+        "Sass": [
+            "sass",
+            "scss"
+        ],
+        "Less": [
+            "lesscss",
+            "less css",
+            "less preprocessor"
+        ],
+        "React": [
+            "react",
+            "reactjs",
+            "react.js",
+            "react native"
+        ],
+        "Vue": [
+            "vue",
+            "vuejs",
+            "vue.js",
+            "vue3"
+        ],
+        "Angular": [
+            "angular",
+            "angularjs",
+            "angular2+"
+        ],
+        "Svelte": [
+            "svelte",
+            "sveltekit"
+        ],
+        "jQuery": [
+            "jquery",
+            "jquery ui"
+        ],
+        "Bootstrap": [
+            "bootstrap",
+            "bootstrap4",
+            "bootstrap5"
+        ],
+        "Tailwind": [
+            "tailwind",
+            "tailwindcss",
+            "tailwind css"
+        ],
+        "Material UI": [
+            "material ui",
+            "mui",
+            "material-ui"
+        ],
+        "Webpack": [
+            "webpack",
+            "webpack5"
+        ],
+        "Vite": [
+            "vite",
+            "vitejs"
+        ],
+        "Parcel": [
+            "parcel",
+            "parceljs"
+        ]
+    },
+    "Backend Frameworks": {
+        "Node.js": [
+            "node",
+            "nodejs",
+            "node.js"
+        ],
+        "Express": [
+            "express",
+            "expressjs",
+            "express.js"
+        ],
+        "Django": [
+            "django",
+            "django rest framework"
+        ],
+        "Flask": [
+            "flask",
+            "flask-restful"
+        ],
+        "FastAPI": [
+            "fastapi",
+            "fast api"
+        ],
+        "Spring": [
+            "spring",
+            "spring boot",
+            "springboot",
+            "spring framework"
+        ],
+        "Laravel": [
+            "laravel",
+            "laravel framework"
+        ],
+        "Ruby on Rails": [
+            "rails",
+            "ruby on rails",
+            "ror"
+        ],
+        "ASP.NET": [
+            "asp.net",
+            "aspnet",
+            "asp.net core"
+        ],
+        "Phoenix": [
+            "phoenix",
+            "elixir phoenix"
+        ],
+        "Gin": [
+            "gin framework",
+            "gin-gonic",
+            "gin golang"
+        ],
+        "Echo": [
+            "echo",
+            "labstack echo"
+        ]
+    },
+    "Databases": {
+        "SQL": [
+            "sql",
+            "structured query language"
+        ],
+        "PostgreSQL": [
+            "postgresql",
+            "postgres",
+            "psql"
+        ],
+        "MySQL": [
+            "mysql",
+            "mysql8"
+        ],
+        "SQLite": [
+            "sqlite",
+            "sqlite3"
+        ],
+        "MongoDB": [
+            "mongodb",
+            "mongo"
+        ],
+        "Redis": [
+            "redis",
+            "redis cache"
+        ],
+        "Elasticsearch": [
+            "elasticsearch",
+            "elastic search"
+        ],
+        "Cassandra": [
+            "cassandra",
+            "apache cassandra"
+        ],
+        "DynamoDB": [
+            "dynamodb",
+            "amazon dynamodb"
+        ],
+        "Oracle": [
+            "oracle",
+            "oracle database"
+        ],
+        "SQL Server": [
+            "sql server",
+            "mssql",
+            "microsoft sql server"
+        ],
+        "Neo4j": [
+            "neo4j",
+            "neo4j graph database"
+        ]
+    },
+    "Cloud & DevOps": {
+        "AWS": [
+            "aws",
+            "amazon web services",
+            "amazon aws"
+        ],
+        "GCP": [
+            "gcp",
+            "google cloud",
+            "google cloud platform"
+        ],
+        "Azure": [
+            "azure",
+            "microsoft azure"
+        ],
+        "Docker": [
+            "docker",
+            "containerization"
+        ],
+        "Kubernetes": [
+            "kubernetes",
+            "k8s"
+        ],
+        "Terraform": [
+            "terraform",
+            "hashicorp terraform"
+        ],
+        "Ansible": [
+            "ansible",
+            "ansible playbook"
+        ],
+        "Jenkins": [
+            "jenkins",
+            "jenkins ci"
+        ],
+        "GitLab CI": [
+            "gitlab ci",
+            "gitlab-ci"
+        ],
+        "GitHub Actions": [
+            "github actions",
+            "gh actions"
+        ],
+        "CircleCI": [
+            "circleci",
+            "circle ci"
+        ],
+        "Travis CI": [
+            "travis ci",
+            "travis-ci"
+        ]
+    },
+    "Version Control": {
+        "Git": [
+            "git",
+            "git version control"
+        ],
+        "GitHub": [
+            "github",
+            "github.com"
+        ],
+        "GitLab": [
+            "gitlab",
+            "gitlab.com"
+        ],
+        "Bitbucket": [
+            "bitbucket",
+            "atlassian bitbucket"
+        ],
+        "SVN": [
+            "svn",
+            "subversion",
+            "apache subversion"
+        ]
+    },
+    "Operating Systems": {
+        "Linux": [
+            "linux",
+            "ubuntu",
+            "centos",
+            "debian",
+            "redhat",
+            "fedora"
+        ],
+        "Windows": [
+            "windows",
+            "windows server",
+            "microsoft windows"
+        ],
+        "macOS": [
+            "macos",
+            "mac os",
+            "osx",
+            "os x"
+        ],
+        "Unix": [
+            "unix",
+            "unix-like"
+        ]
+    },
+    "Mobile Development": {
+        "iOS": [
+            "ios",
+            "ios development",
+            "iphone",
+            "ipad"
+        ],
+        "Android": [
+            "android",
+            "android development"
+        ],
+        "React Native": [
+            "react native",
+            "react-native"
+        ],
+        "Flutter": [
+            "flutter",
+            "flutter development",
+            "dart flutter"
+        ],
+        "Xamarin": [
+            "xamarin",
+            "xamarin.forms"
+        ],
+        "Ionic": [
+            "ionic",
+            "ionic framework"
+        ],
+        "Cordova": [
+            "cordova",
+            "apache cordova",
+            "phonegap"
+        ]
+    },
+    "Data Science & ML": {
+        "Machine Learning": [
+            "machine learning",
+            "ml",
+            "artificial intelligence"
+        ],
+        "Deep Learning": [
+            "deep learning",
+            "neural networks"
+        ],
+        "TensorFlow": [
+            "tensorflow",
+            "tensorflow 2"
+        ],
+        "PyTorch": [
+            "pytorch"
+        ],
+        "Keras": [
+            "keras",
+            "keras api"
+        ],
+        "Scikit-learn": [
+            "scikit-learn",
+            "sklearn",
+            "scikit learn"
+        ],
+        "Pandas": [
+            "pandas",
+            "pandas dataframe"
+        ],
+        "NumPy": [
+            "numpy",
+            "numerical python"
+        ],
+        "Matplotlib": [
+            "matplotlib",
+            "pyplot"
+        ],
+        "Seaborn": [
+            "seaborn",
+            "statistical visualization"
+        ],
+        "Jupyter": [
+            "jupyter",
+            "jupyter notebook",
+            "jupyter lab"
+        ],
+        "Apache Spark": [
+            "apache spark",
+            "pyspark"
+        ],
+        "Hadoop": [
+            "hadoop",
+            "apache hadoop"
+        ]
+    },
+    "Testing": {
+        "Unit Testing": [
+            "unit testing",
+            "unit tests"
+        ],
+        "Jest": [
+            "jest",
+            "jest testing"
+        ],
+        "Pytest": [
+            "pytest",
+            "py.test"
+        ],
+        "JUnit": [
+            "junit",
+            "junit5"
+        ],
+        "Selenium": [
+            "selenium",
+            "selenium webdriver"
+        ],
+        "Cypress": [
+            "cypress",
+            "cypress.io"
+        ],
+        "Playwright": [
+            "playwright",
+            "microsoft playwright"
+        ],
+        "Mocha": [
+            "mocha",
+            "mochajs"
+        ],
+        "Jasmine": [
+            "jasmine",
+            "jasmine testing"
+        ]
+    },
+    "Project Management": {
+        "Agile": [
+            "agile",
+            "agile methodology",
+            "agile development"
+        ],
+        "Scrum": [
+            "scrum",
+            "scrum master",
+            "scrum methodology"
+        ],
+        "Kanban": [
+            "kanban",
+            "kanban board"
+        ],
+        "Jira": [
+            "jira",
+            "atlassian jira"
+        ],
+        "Confluence": [
+            "confluence",
+            "atlassian confluence"
+        ],
+        "Trello": [
+            "trello",
+            "trello board"
+        ],
+        "Asana": [
+            "asana",
+            "asana project management"
+        ]
+    },
+    "Design & UI/UX": {
+        "Figma": [
+            "figma",
+            "figma design"
+        ],
+        "Sketch": [
+            "sketch",
+            "sketch app"
+        ],
+        "Adobe XD": [
+            "adobe xd"
+        ],
+        "Photoshop": [
+            "photoshop",
+            "adobe photoshop"
+        ],
+        "Illustrator": [
+            "illustrator",
+            "adobe illustrator"
+        ],
+        "InDesign": [
+            "indesign",
+            "adobe indesign"
+        ],
+        "UI/UX": [
+            "ui/ux",
+            "user interface",
+            "user experience",
+            "ux design",
+            "ui design"
+        ]
+    },
+    "Analytics & BI": {
+        "Google Analytics": [
+            "google analytics"
+        ],
+        "Tableau": [
+            "tableau",
+            "tableau desktop"
+        ],
+        "Power BI": [
+            "power bi",
+            "powerbi",
+            "microsoft power bi"
+        ],
+        "Looker": [
+            "looker",
+            "google looker"
+        ],
+        "Grafana": [
+            "grafana",
+            "grafana dashboard"
+        ],
+        "Excel": [
+            "microsoft excel",
+            "ms excel",
+            "excel spreadsheet"
+        ],
+        "Google Sheets": [
+            "google sheets"
+        ]
+    },
+    "Security": {
+        "Cybersecurity": [
+            "cybersecurity",
+            "cyber security",
+            "information security"
+        ],
+        "Penetration Testing": [
+            "penetration testing",
+            "pen testing",
+            "pentesting"
+        ],
+        "OWASP": [
+            "owasp",
+            "owasp top 10"
+        ],
+        "SSL/TLS": [
+            "ssl",
+            "tls",
+            "ssl/tls",
+            "https"
+        ],
+        "OAuth": [
+            "oauth",
+            "oauth2",
+            "oauth 2.0"
+        ],
+        "JWT": [
+            "jwt",
+            "json web token"
+        ],
+        "Encryption": [
+            "encryption",
+            "cryptography",
+            "aes",
+            "rsa"
+        ]
+    },
+    "Communication & APIs": {
+        "REST": [
+            "rest",
+            "restful",
+            "rest api",
+            "restful api"
+        ],
+        "GraphQL": [
+            "graphql",
+            "graph ql",
+            "apollo graphql"
+        ],
+        "SOAP": [
+            "soap",
+            "soap api"
+        ],
+        "gRPC": [
+            "grpc",
+            "grpc protocol"
+        ],
+        "WebSocket": [
+            "websocket",
+            "websockets"
+        ],
+        "JSON": [
+            "json",
+            "json format"
+        ],
+        "XML": [
+            "xml",
+            "xml format"
+        ],
+        "YAML": [
+            "yaml",
+            "yaml format"
+        ]
+    }
+}

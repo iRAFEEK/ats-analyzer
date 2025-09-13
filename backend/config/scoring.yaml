@@ -1,0 +1,45 @@
+# ATS Analyzer Scoring Configuration
+
+# Similarity thresholds for skill matching (extremely strict)
+similarity_thresholds:
+  required_hit: 0.90      # Minimum similarity for required skill match (very strict)
+  preferred_hit: 0.85     # Minimum similarity for preferred skill match (very strict)
+  weak_support: 0.75      # Threshold for weakly supported skills (very strict)
+
+# Overall scoring weights
+weights:
+  coverage: 0.6           # Weight for skill coverage score
+  experience: 0.3         # Weight for experience relevance score
+  education: 0.1          # Weight for education fit score
+
+# Section weights for skill extraction
+section_weights:
+  experience: 1.0         # Skills found in experience section
+  projects: 0.8           # Skills found in projects section
+  skills: 0.4             # Skills found in dedicated skills section
+  summary: 0.6            # Skills found in summary section
+  education: 0.3          # Skills found in education section
+
+# Experience scoring parameters
+recency_years_boost: 2    # Years of recent experience that get bonus points
+
+# Education level scoring
+education_levels:
+  high_school: 1
+  associate: 2
+  bachelor: 3
+  master: 4
+  phd: 5
+
+# ATS linting thresholds (made more strict)
+ats_thresholds:
+  min_word_count: 300     # Minimum words for adequate resume (increased)
+  max_word_count: 800     # Maximum words before too verbose (decreased)
+  max_special_char_ratio: 0.03  # Max ratio of special characters (stricter)
+  min_standard_headers: 3 # Minimum standard section headers required (increased)
+
+# Matching parameters
+matching:
+  fuzzy_threshold: 0.9    # Threshold for fuzzy string matching
+  semantic_threshold: 0.75 # Threshold for semantic similarity
+  context_window: 100     # Characters of context to extract around matches

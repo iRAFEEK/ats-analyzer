@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 221.2 83.2% 53.3%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222.2 84% 4.9%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 210 40% 96%;
+        --accent-foreground: 222.2 84% 4.9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 221.2 83.2% 53.3%;
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 217.2 91.2% 59.8%;
+        --primary-foreground: 222.2 84% 4.9%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 224.3 76.3% 94.1%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Custom styles for ATS Analyzer */
+.prose {
+    @apply text-foreground;
+}
+
+.score-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-sm;
+}
+
+.warning-item {
+    @apply bg-destructive/10 border-l-4 border-destructive p-4 rounded-r-md text-destructive-foreground;
+}
+
+.success-item {
+    @apply bg-green-50 border-l-4 border-green-500 p-4 rounded-r-md text-green-800 dark:text-green-200;
+}
+
+.evidence-item {
+    @apply bg-muted/50 border border-border rounded-md p-3 text-sm text-foreground;
+}
+
+/* Ensure all text has proper contrast and is readable */
+* {
+    color: inherit;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+.text-gray-900 {
+    color: #111827 !important;
+}
+
+/* Force dark text for better readability */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span {
+    color: rgb(var(--foreground));
+}
+
+/* Make sure skill matches and evidence text is dark */
+.skill-match-text {
+    color: #1f2937 !important;
+}
+
+.evidence-text {
+    color: #374151 !important;
+}
+
+/* File upload drag and drop styles */
+.file-drop-zone {
+    @apply border-2 border-dashed border-border rounded-lg p-8 text-center transition-colors;
+}
+
+.file-drop-zone.drag-over {
+    @apply border-primary bg-primary/5;
+}
+
+.file-drop-zone.has-file {
+    @apply border-green-500 bg-green-50;
+}
+
+/* Loading states */
+.loading-spinner {
+    @apply animate-spin rounded-full border-2 border-muted border-t-primary;
+}
+
+/* Accessibility improvements */
+.sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .score-card {
+        @apply border-2;
+    }
+}

@@ -1,0 +1,148 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ats_postgres
+    environment:
+      POSTGRES_DB: ats_db
+      POSTGRES_USER: ats_user
+      POSTGRES_PASSWORD: ats_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ats_user -d ats_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ats_network
+
+  # Redis for caching and queues
+  redis:
+    image: redis:7-alpine
+    container_name: ats_redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ats_network
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile.dev
+    container_name: ats_backend
+    environment:
+      - DATABASE_URL=postgresql://ats_user:ats_pass@postgres:5432/ats_db
+      - REDIS_URL=redis://redis:6379/0
+      - PYTHONPATH=/app
+      - LOG_LEVEL=INFO
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../backend:/app
+      - /app/__pycache__
+      - backend_uploads:/tmp/ats_uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ats_network
+    restart: unless-stopped
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile.dev
+    container_name: ats_frontend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    networks:
+      - ats_network
+    restart: unless-stopped
+
+  # Optional: Celery Worker (for background tasks)
+  celery-worker:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile.dev
+    container_name: ats_celery_worker
+    environment:
+      - DATABASE_URL=postgresql://ats_user:ats_pass@postgres:5432/ats_db
+      - REDIS_URL=redis://redis:6379/0
+      - PYTHONPATH=/app
+    volumes:
+      - ../backend:/app
+      - backend_uploads:/tmp/ats_uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A ats_analyzer.celery_app worker --loglevel=info
+    networks:
+      - ats_network
+    restart: unless-stopped
+    profiles:
+      - celery  # Optional service, start with --profile celery
+
+  # Optional: Flower (Celery monitoring)
+  flower:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile.dev
+    container_name: ats_flower
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+    command: celery -A ats_analyzer.celery_app flower --port=5555
+    networks:
+      - ats_network
+    restart: unless-stopped
+    profiles:
+      - celery  # Optional service
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  backend_uploads:
+    driver: local
+
+networks:
+  ats_network:
+    driver: bridge
