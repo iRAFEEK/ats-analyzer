@@ -5,8 +5,9 @@ import { Loader2, FileText, Search, BarChart3 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface LoadingStateProps {
-    status: 'parsing' | 'analyzing';
+    status: 'idle' | 'parsing' | 'analyzing' | 'complete' | 'error';
     progress?: number;
+    message?: string;
     className?: string;
 }
 
@@ -55,9 +56,14 @@ function LoadingStep({ icon, title, description, isActive, isComplete }: Loading
     );
 }
 
-export default function LoadingState({ status, progress = 0, className }: LoadingStateProps) {
+export default function LoadingState({ status, progress = 0, message, className }: LoadingStateProps) {
     const isParsing = status === 'parsing';
     const isAnalyzing = status === 'analyzing';
+    
+    // Only show loading animation for parsing and analyzing states
+    if (status !== 'parsing' && status !== 'analyzing') {
+        return null;
+    }
 
     const steps = [
         {
