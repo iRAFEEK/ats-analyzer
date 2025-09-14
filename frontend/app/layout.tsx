@@ -4,12 +4,16 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1
+}
+
 export const metadata: Metadata = {
     title: 'ATS Résumé Analyzer',
     description: 'Analyze your résumé for ATS compatibility and job matching',
     keywords: 'ATS, resume, analyzer, job matching, applicant tracking system',
     authors: [{ name: 'ATS Analyzer Team' }],
-    viewport: 'width=device-width, initial-scale=1',
     robots: 'index, follow',
 }
 
