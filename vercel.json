@@ -1,17 +1,26 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/.next",
-  "framework": "nextjs",
-  "functions": {
-    "api/**/*.py": {
-      "runtime": "python3.11"
+  "builds": [
+    {
+      "src": "frontend/next.config.mjs",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "backend/main.py",
+      "use": "@vercel/python@3.1.0"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/backend/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
     }
-  ]
+  ],
+  "env": {
+    "PYTHONPATH": "/var/task/backend"
+  }
 }
